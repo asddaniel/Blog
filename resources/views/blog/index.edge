@@ -19,6 +19,10 @@
     </div>
 
   </div>
-
+     <ul class="pagination">
+      @each(anchor in articles.getUrlsForRange(1, articles.lastPage))
+            <button class="btn"><a href="{{anchor.url}}">{{anchor.page}}</a></button>
+      @endeach
+     </ul>
 </div>
 @endsection
