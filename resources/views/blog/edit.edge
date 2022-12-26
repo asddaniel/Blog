@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-  <form action="" method="post">
+  <form action="{{route('article.update', [article.id+1]) }}" method="post">
     @!component('components/input',
     {'name': 'title', 'value': article.title})
 

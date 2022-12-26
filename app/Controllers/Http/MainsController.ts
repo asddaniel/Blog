@@ -23,8 +23,9 @@ export default class MainsController {
   }
 
 
-    async update({params, request}:HttpContextContract){
+    async update({params, request, response}:HttpContextContract){
       const article = await Article.findOrFail(params.id-1)
-        return request.all()
+      article.merge(request.all()).save()
+        return response.redirect().toRoute('home')
     }
 }
