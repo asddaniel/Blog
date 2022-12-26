@@ -28,3 +28,4 @@ Route.get("/article/:id", 'MainsController.show').as("article.show").where('id',
 Route.get("/:id", 'MainsController.edit').as("article.edit").where('id', /^[0-9]+$/)
 Route.post("/update-article/:id", 'MainsController.update').as("article.update").where('id', /^[0-9]+$/)
 Route.post("/article/store", 'MainsController.store').as('article.store')
+Route.delete('/article/:id/delete', 'MainsController.destroy').as("article.delete")

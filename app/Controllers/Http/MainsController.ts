@@ -17,7 +17,7 @@ export default class MainsController {
 
     async store({params, request, response, session}:HttpContextContract){
      await  this.handleRequest(params, request)
-    
+
 
        session.flash({'success': "article enregistré"})
         return response.redirect().toRoute('home')
@@ -41,6 +41,12 @@ export default class MainsController {
        session.flash({'success': "article enregistré"})
         return response.redirect().toRoute('home')
     }
+    async destroy({params, session, response}:HttpContextContract){
+      const article = await Article.findOrFail(params.id-1)
+     await article.delete()
+     session.flash({'success': "article supprimé"})
+     return response.redirect().toRoute('home')
+  }
 
     private async handleRequest(params:HttpContextContract['params'], request: HttpContextContract['request']){
         const article = params.id ? await Article.findOrFail(params.id-1): new Article()

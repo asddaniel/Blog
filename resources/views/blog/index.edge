@@ -11,7 +11,9 @@
       @each(article in articles)
       <li><a href="#">{{ article.title }}</a></li>
       <button class="btn"> <a href="{{route('article.edit', [(article.id +1)]) }}"> modifier</a> </button>
-      <button class="btn">supprimer</button>
+      <form style="display:inline-block" action="{{route('article.delete', [(article.id +1)]) }}?_method=DELETE" >
+      <button class="btn">  supprimer </button>
+    </form>
       <button class="btn"> <a href="{{route('article.show', [(article.id +1)]) }}"> voir </a> </button>
       @endeach
     </div>
