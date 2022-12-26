@@ -15,6 +15,14 @@ export default class MainsController {
        return view.render("blog/add")
     }
 
+    async store({params, request, response, session}:HttpContextContract){
+
+      //article.merge(await request.validate(ArticleValidator)).save()
+
+       session.flash({'success': "article enregistré"})
+        return response.redirect().toRoute('home')
+    }
+
     async edit({params, view}:HttpContextContract){
         const article = await Article.findOrFail(params.id-1)
         return view.render("blog/edit", {article})
