@@ -24,3 +24,6 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', 'MainsController.index').as("accueil")
 Route.get('/home', 'MainsController.index').as("home")
 Route.get('/article', 'MainsController.article').as("article.add")
+Route.get("/article/:id", 'MainsController.show').as("article.show").where('id', /^[0-9]+$/)
+Route.get("/:id", 'MainsController.edit').as("article.edit").where('id', /^[0-9]+$/)
+Route.get("/update-article/:id", 'MainsController.update').as("article.update").where('id', /^[0-9]+$/)

@@ -28,6 +28,9 @@
   width: 100%;
   justify-content: space-around;
 }
+.marge-2{
+margin: 2vh;
+}
 .container{
   display: flex;
   align-items: center;

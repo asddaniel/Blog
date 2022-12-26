@@ -1,0 +1,12 @@
+@layout("layouts/layout")
+
+@section('content')
+<div class="container">
+  <form action="" method="post">
+    @!@!component('components/input',
+    {'name': 'title', 'value': article.name})
+
+  </form>
+</div>
+
+@endsection

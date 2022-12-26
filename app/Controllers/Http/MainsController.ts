@@ -11,4 +11,20 @@ export default class MainsController {
     async article({view}:HttpContextContract){
        return view.render("blog/add")
     }
+
+    async edit({params, view}:HttpContextContract){
+        const article = await Article.findOrFail(params.id-1)
+        return view.render("blog/show", {article})
+    }
+
+    async show({params, view}:HttpContextContract){
+      const article = await Article.findOrFail(params.id-1)
+      return view.render("blog/show", {article})
+  }
+
+
+    async update({params, view}:HttpContextContract){
+      const article = await Article.findOrFail(params.id-1)
+        return view.render("blog/show", {article})
+    }
 }
