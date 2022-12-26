@@ -28,3 +28,16 @@
   width: 100%;
   justify-content: space-around;
 }
+.container{
+  display: flex;
+  align-items: center;
+  margin: 5vh;
+}
+.btn{
+  background-color: gray;
+  border: none;
+  padding: 1.5vh;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgb(211, 209, 209);
+}
