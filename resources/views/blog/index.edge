@@ -5,6 +5,8 @@
 
   <h1>Blog Adonis </h1>
   <div class="container">
+    @!component('components/flash')
+
     <div class="li">
       @each(article in articles)
       <li><a href="#">{{ article.title }}</a></li>

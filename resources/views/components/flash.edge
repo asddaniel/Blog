@@ -1,0 +1,16 @@
+
+@if(flashMessages.has('success'))
+<div class="flash">
+      {{flashMessages.get('success')}}
+</div>
+
+
+@elseif(flashMessages.has('error'))
+<div class="flash">
+  echecs
+</div>
+@else
+
+@end
+
+

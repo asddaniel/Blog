@@ -1,5 +1,7 @@
- import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
+
+import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Article from 'App/Models/Article'
+
 
 
 export default class MainsController {
@@ -23,9 +25,11 @@ export default class MainsController {
   }
 
 
-    async update({params, request, response}:HttpContextContract){
+    async update({params, request, response, session}:HttpContextContract){
       const article = await Article.findOrFail(params.id-1)
       article.merge(request.all()).save()
+
+       session.flash({'success': "article enregistré"})
         return response.redirect().toRoute('home')
     }
 }
