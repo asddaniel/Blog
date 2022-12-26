@@ -10,6 +10,10 @@ export default class extends BaseSchema {
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */
+      table.string('title').notNullable()
+      table.boolean("online").notNullable().defaultTo(false)
+      table.string("thumbnail").nullable()
+      table.text("content", "longtext").nullable()
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
     })
