@@ -3,9 +3,13 @@
 @section('content')
 <div class="container">
   <form action="" method="post">
-    @!@!component('components/input',
-    {'name': 'title', 'value': article.name})
+    @!component('components/input',
+    {'name': 'title', 'value': article.title})
 
+@!component('components/textarea',
+{'name': 'content', 'value': article.content})
+<br>
+     <button class="btn" type="submit">Enregistrer</button>
   </form>
 </div>
 

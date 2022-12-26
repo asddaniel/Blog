@@ -31,10 +31,18 @@
 .marge-2{
 margin: 2vh;
 }
+input, textarea{
+  border: none;
+  width: 100%;
+  padding: 1vw;
+  margin-top: 1vw;
+  outline: 1px solid blue;
+}
 .container{
   display: flex;
   align-items: center;
   margin: 5vh;
+  transform: translateX(10%);
 }
 .btn{
   background-color: gray;
