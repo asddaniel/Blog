@@ -22,3 +22,9 @@
 .logo{
   font-weight: bold;
 }
+.link{
+  display: flex;
+  padding: 0.5vh;
+  width: 100%;
+  justify-content: space-around;
+}

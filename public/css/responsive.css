@@ -1,0 +1,28 @@
+@media screen and (max-width: 900px) {
+
+.nav-bar{
+  position: absolute;
+  height: 99vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr;
+  transition: all 0.5s ease-in-out;
+}
+.mobile-menu{
+left: 100vw;
+}
+.link{
+  flex-direction: column;
+
+  height: 100%;
+  align-items: center;
+ justify-content: flex-start;
+  padding-bottom: 10vh;
+
+}
+.link a{
+  margin-top: 1vh;
+}
+
+
+
+}
