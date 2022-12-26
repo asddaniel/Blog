@@ -1,5 +1,10 @@
 <div class="form-post">
-  <textarea rows="5"  name="{{ name }}" value="{{value}}" placeholder="{{name}}">
+  <textarea rows="5"  name="{{ name }}" value="{{ flashMessages.get(name) || value||''}}" placeholder="{{name}}">
     {{value}}
   </textarea>
+  @if(flashMessages.has(`errors.${name}`))
+
+      <h2>{{ flashMessages.get(`errors.${name}`)}}</h2>
+
+@endif
 </div>
