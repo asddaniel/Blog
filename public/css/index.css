@@ -1,0 +1,24 @@
+*, ::before,::after{
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-bar{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  align-items: center;
+  justify-items: center;
+  height: 10vh;
+  font-style: oblique;
+  background-color: white;
+  color: black;
+  font-size: 1.5rem;
+  box-shadow: 1px 1px 5px rgb(226, 226, 226);
+}
+.logo{
+  font-weight: bold;
+}
