@@ -1,6 +1,7 @@
 
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import Article from 'App/Models/Article'
+import Categorie from 'App/Models/Categorie';
 import ArticleValidator from 'App/Validators/ArticleValidator'
 import Database from '@ioc:Adonis/Lucid/Database';
 
@@ -33,6 +34,9 @@ export default class MainsController {
     async edit({params, view}:HttpContextContract){
         const article = await Article.findOrFail(params.id-1)
         return view.render("blog/edit", {article})
+    }
+    async getArticle(id){
+      return await Article.query().preload('categories').where('id', id).firstOrFail()
     }
 
     async show({params, view}:HttpContextContract){
